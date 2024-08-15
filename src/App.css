@@ -1,1 +1,22 @@
-/* app styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+.body {
+  position: relative;
+  padding-top: 45px;
+  padding-left: 15px;
+}

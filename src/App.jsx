@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <NavBar />
-      <h1>Home Page</h1>
+      <section className="body">
+        <h1>Home</h1>
+      </section>
     </>
   );
 }

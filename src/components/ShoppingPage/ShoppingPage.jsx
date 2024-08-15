@@ -1,10 +1,13 @@
 import NavBar from "../NavBar/NavBar";
+import classes from "./ShoppingPage.module.css";
 
 const ShoppingPage = () => {
   return (
     <>
       <NavBar />
-      <h1>Shopping Page</h1>
+      <section className={classes.body}>
+        <h1>Shopping</h1>
+      </section>
     </>
   );
 };

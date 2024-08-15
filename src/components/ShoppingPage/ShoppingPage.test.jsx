@@ -11,6 +11,6 @@ describe("Shopping Page component", () => {
         <ShoppingPage />
       </MemoryRouter>
     );
-    expect(screen.getByRole("heading").textContent).toMatch(/shopping page/i);
+    expect(screen.getByRole("heading").textContent).toMatch(/shopping/i);
   });
 });
