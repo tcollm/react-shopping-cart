@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import classes from "./AddItem.module.css";
 
 const AddItem = () => {
   const [itemCount, setItemCount] = useState(0);
@@ -15,7 +16,11 @@ const AddItem = () => {
     setItemCount(itemCount + 1);
   };
 
-  return <button onClick={handleAddItem}>Add Item</button>;
+  return (
+    <button onClick={handleAddItem} className={classes.addButton}>
+      + Add
+    </button>
+  );
 };
 
 export default AddItem;

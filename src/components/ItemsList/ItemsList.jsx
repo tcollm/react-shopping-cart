@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import classes from "./ItemsList.module.css";
+import AddItem from "../AddItem/AddItem";
 
 // item object:
 // {
@@ -32,7 +33,10 @@ const ItemsList = () => {
           <h2>{item.title}</h2>
           <img src={item.image} alt={item.title} />
           <p>{item.description}</p>
-          <p>${item.price.toFixed(2)}</p>
+          <div className={classes.wrapper}>
+            <p>${item.price.toFixed(2)}</p>
+            <AddItem />
+          </div>
         </li>
       ))}
     </ul>

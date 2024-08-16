@@ -48,3 +48,10 @@
   font-weight: bold;
   color: #000;
 }
+
+.ul .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
