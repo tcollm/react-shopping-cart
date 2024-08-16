@@ -1,0 +1,50 @@
+/* ItemsList.module.css */
+
+.ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  justify-content: space-between; /* Space between items */
+  gap: 16px; /* Adds some space between the items */
+}
+
+.ul li {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 calc(33.333% - 32px); /* Three items per row with space */
+  max-width: calc(
+    33.333% - 32px
+  ); /* Ensures the items don't exceed one-third of the row */
+}
+
+.ul h2 {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+  color: #333;
+  text-align: center;
+}
+
+.ul img {
+  width: 150px; /* Adjusted image size */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.ul p {
+  margin: 8px 0;
+  color: #555;
+  text-align: center;
+}
+
+.ul p:last-child {
+  font-weight: bold;
+  color: #000;
+}

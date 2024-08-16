@@ -1,5 +1,4 @@
 .body {
   position: relative;
-  padding-top: 45px;
-  padding-left: 15px;
+  padding: 45px 15px 25px;
 }
