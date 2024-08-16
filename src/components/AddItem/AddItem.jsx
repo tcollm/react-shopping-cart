@@ -1,26 +1,21 @@
-import { useEffect, useState } from "react";
+// import useItemCount from "./useItemCount";
+import PropTypes from "prop-types";
 import classes from "./AddItem.module.css";
 
-const AddItem = () => {
-  const [itemCount, setItemCount] = useState(0);
-  // const [cart, setCart] = useState([]);
-
-  // useEffect(() => {
-  //   if (itemCount > 0) {
-  //     // get new item...
-  //     setCart((prevCart) => [...prevCart, newItem]);
-  //   }
-  // });
-
-  const handleAddItem = () => {
-    setItemCount(itemCount + 1);
+const AddItem = ({ incrementItemCount }) => {
+  const onClickFun = () => {
+    incrementItemCount();
   };
 
   return (
-    <button onClick={handleAddItem} className={classes.addButton}>
+    <button onClick={onClickFun} className={classes.addButton}>
       + Add
     </button>
   );
 };
 
 export default AddItem;
+
+AddItem.propTypes = {
+  incrementItemCount: PropTypes.func.isRequired,
+};

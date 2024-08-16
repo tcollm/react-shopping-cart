@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
 import classes from "./ItemsList.module.css";
 import AddItem from "../AddItem/AddItem";
+import useFetchItems from "./useFetchItems";
+import { useState } from "react";
 
 // item object:
 // {
@@ -13,18 +14,17 @@ import AddItem from "../AddItem/AddItem";
 // },
 
 const ItemsList = () => {
-  const [items, setItems] = useState([]);
+  const { items, error } = useFetchItems();
+  const [itemCount, setItemCount] = useState(1);
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=10").then((res) =>
-      res
-        .json()
-        .then((data) => setItems(data))
-        .catch((e) => {
-          console.error("Error fetching items:", e);
-        })
-    );
-  }, []);
+  const incrementItemCount = () => {
+    console.log("Button clicked: ", itemCount);
+    setItemCount(itemCount + 1);
+  };
+
+  if (error) {
+    return <p>Error fetching items: {error.message}</p>;
+  }
 
   return (
     <ul className={classes.ul}>
@@ -35,7 +35,7 @@ const ItemsList = () => {
           <p>{item.description}</p>
           <div className={classes.wrapper}>
             <p>${item.price.toFixed(2)}</p>
-            <AddItem />
+            <AddItem incrementItemCount={incrementItemCount} />
           </div>
         </li>
       ))}
