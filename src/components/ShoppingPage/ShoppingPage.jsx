@@ -12,7 +12,7 @@ const ShoppingPage = () => {
     <>
       <section className={classes.body}>
         <h1>Shopping</h1>
-        <section className="items">
+        <section className={classes.section}>
           <ItemsList items={items} />
         </section>
       </section>

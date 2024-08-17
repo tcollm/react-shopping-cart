@@ -3,16 +3,6 @@ import AddItem from "../AddItem/AddItem";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-// item object:
-// {
-//   id:1,
-//   title:'...',
-//   price:'...',
-//   category:'...',
-//   description:'...',
-//   image:'...'
-// },
-
 const ItemsList = ({ items }) => {
   // eslint-disable-next-line use-encapsulation/prefer-custom-hooks
   const [itemCount, setItemCount] = useState(1);
@@ -21,6 +11,8 @@ const ItemsList = ({ items }) => {
     console.log("Button clicked: ", itemCount);
     setItemCount(itemCount + 1);
   };
+
+  // TODO: truncate desc but allow expanding of it
 
   return (
     <ul className={classes.ul}>

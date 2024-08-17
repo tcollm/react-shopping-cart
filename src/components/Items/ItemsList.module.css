@@ -1,12 +1,11 @@
-/* ItemsList.module.css */
-
 .ul {
   list-style-type: none;
   padding: 0;
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
-  justify-content: space-between; /* Space between items */
-  gap: 16px; /* Adds some space between the items */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: "Arial", sans-serif;
 }
 
 .ul li {
@@ -22,6 +21,11 @@
   max-width: calc(
     33.333% - 32px
   ); /* Ensures the items don't exceed one-third of the row */
+  transition: transform 0.2s;
+}
+
+.ul li:hover {
+  transform: translateY(-10px);
 }
 
 .ul h2 {
@@ -32,7 +36,7 @@
 }
 
 .ul img {
-  width: 150px; /* Adjusted image size */
+  width: 150px;
   height: auto;
   border-radius: 8px;
   margin-bottom: 12px;
