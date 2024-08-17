@@ -5,7 +5,7 @@ const useFetchItems = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=10").then((res) =>
+    fetch("https://fakestoreapi.com/products?limit=19").then((res) =>
       res
         .json()
         .then((data) => setItems(data))
