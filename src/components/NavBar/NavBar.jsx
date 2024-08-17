@@ -14,22 +14,9 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <Link to="shopping">Shopping</Link>
-
-            {/* Disallow the user from routing to shopping when already on shopping page
-            {location.pathname === "/shopping" ? (
-              <Link
-                to="#"
-                onClick={(e) => e.preventDefault()}
-                className={classes.link}
-              >
-                Shopping
-              </Link>
-            ) : (
-              <Link to="shopping" className={classes.link}>
-                Shopping
-              </Link>
-            )} */}
+            <Link to="shopping" className={classes.link}>
+              Shopping
+            </Link>
           </li>
         </ul>
       </nav>

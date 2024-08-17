@@ -10,8 +10,8 @@
 
 .ul li {
   border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
+  padding: 20px;
+  border-radius: 10px;
   margin: 12px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -21,16 +21,16 @@
   max-width: calc(
     33.333% - 32px
   ); /* Ensures the items don't exceed one-third of the row */
-  transition: transform 0.2s;
+  transition: box-shadow 0.2s;
 }
 
 .ul li:hover {
-  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .ul h2 {
-  font-size: 1.5em;
-  margin-bottom: 8px;
+  font-size: 1.3em;
+  margin-bottom: 12px;
   color: #333;
   text-align: center;
 }
@@ -58,4 +58,20 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+}
+
+.toggleButton {
+  color: #555;
+  font-size: 0.9em;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 3px;
+  cursor: pointer;
+  transition: background-color color 0.3s;
+}
+
+.toggleButton:hover {
+  background-color: #005fa3;
+  color: white;
 }
