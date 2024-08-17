@@ -16,6 +16,7 @@ import PropTypes from "prop-types";
 
 const ItemsList = ({ items }) => {
   // const { items, error } = useFetchItems();
+  // eslint-disable-next-line use-encapsulation/prefer-custom-hooks
   const [itemCount, setItemCount] = useState(1);
 
   const incrementItemCount = () => {
