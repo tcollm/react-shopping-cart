@@ -1,7 +1,8 @@
 import classes from "./ItemsList.module.css";
 import AddItem from "../AddItem/AddItem";
-import useFetchItems from "./useFetchItems";
+// import useFetchItems from "./useFetchItems";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 // item object:
 // {
@@ -13,8 +14,8 @@ import { useState } from "react";
 //   image:'...'
 // },
 
-const ItemsList = () => {
-  const { items, error } = useFetchItems();
+const ItemsList = ({ items }) => {
+  // const { items, error } = useFetchItems();
   const [itemCount, setItemCount] = useState(1);
 
   const incrementItemCount = () => {
@@ -22,9 +23,9 @@ const ItemsList = () => {
     setItemCount(itemCount + 1);
   };
 
-  if (error) {
-    return <p>Error fetching items: {error.message}</p>;
-  }
+  // if (error) {
+  //   return <p>Error fetching items: {error.message}</p>;
+  // }
 
   return (
     <ul className={classes.ul}>
@@ -41,6 +42,19 @@ const ItemsList = () => {
       ))}
     </ul>
   );
+};
+
+ItemsList.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      category: PropTypes.string,
+      description: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default ItemsList;

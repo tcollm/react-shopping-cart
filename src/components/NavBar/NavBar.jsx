@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import classes from "./NavBar.module.css";
 
 const NavBar = () => {
-  const location = useLocation();
+  // const location = useLocation();
 
   return (
     <>
@@ -14,7 +14,9 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            {/* Disallow the user from routing to shopping when already on shopping page */}
+            <Link to="shopping">Shopping</Link>
+
+            {/* Disallow the user from routing to shopping when already on shopping page
             {location.pathname === "/shopping" ? (
               <Link
                 to="#"
@@ -27,7 +29,7 @@ const NavBar = () => {
               <Link to="shopping" className={classes.link}>
                 Shopping
               </Link>
-            )}
+            )} */}
           </li>
         </ul>
       </nav>
