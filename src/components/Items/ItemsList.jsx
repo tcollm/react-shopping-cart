@@ -1,6 +1,5 @@
 import classes from "./ItemsList.module.css";
 import AddItem from "../AddItem/AddItem";
-// import useFetchItems from "./useFetchItems";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
@@ -15,7 +14,6 @@ import PropTypes from "prop-types";
 // },
 
 const ItemsList = ({ items }) => {
-  // const { items, error } = useFetchItems();
   // eslint-disable-next-line use-encapsulation/prefer-custom-hooks
   const [itemCount, setItemCount] = useState(1);
 
@@ -23,10 +21,6 @@ const ItemsList = ({ items }) => {
     console.log("Button clicked: ", itemCount);
     setItemCount(itemCount + 1);
   };
-
-  // if (error) {
-  //   return <p>Error fetching items: {error.message}</p>;
-  // }
 
   return (
     <ul className={classes.ul}>

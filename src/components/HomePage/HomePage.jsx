@@ -1,4 +1,12 @@
+import { useItems } from "../Items/ItemsContext";
+
 const HomePage = () => {
+  const { items, error } = useItems();
+
+  if (error) {
+    return <p>Error fetching items: {error.message}</p>;
+  }
+
   return (
     <section className="body">
       <h1>Home</h1>
@@ -6,7 +14,7 @@ const HomePage = () => {
       {/* Today's Deals */}
       <section className="deals">
         <h2>Today&#39;s Deals</h2>
-        <div className="backpack"></div>
+        <div className="backpack">{/* TODO: render items */}</div>
         <div className="slimfit shirt"></div>
         <div className="ssd disk"></div>
       </section>
