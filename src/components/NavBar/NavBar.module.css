@@ -6,13 +6,21 @@
   top: 0;
   width: 100%;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav ul {
+.navList,
+.navListRight {
   display: flex;
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.navListRight {
+  margin-left: auto;
 }
 
 .nav li {

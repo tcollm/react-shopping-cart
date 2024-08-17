@@ -8,6 +8,16 @@ const HomePage = () => {
     return <p>Error fetching items: {error.message}</p>;
   }
 
+  if (!items || !Array.isArray(items) || items.length < 17) {
+    return <p>Loading...</p>;
+  }
+
+  // if (items.length > 0) {
+  //   console.log("Items:", items);
+  // } else {
+  //   console.log("Error getting items");
+  // }
+
   return (
     <section className={classes.body}>
       {/* Today's Deals */}

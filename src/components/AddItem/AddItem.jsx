@@ -1,21 +1,16 @@
-// import useItemCount from "./useItemCount";
-import PropTypes from "prop-types";
 import classes from "./AddItem.module.css";
+import { useItemCountContext } from "../Items/ItemCountContext";
 
-const AddItem = ({ incrementItemCount }) => {
-  const onClickFun = () => {
-    incrementItemCount();
-  };
+const AddItem = () => {
+  // TODO: incrementItemCount function does not increment item count
+  // nor does it display next to cart
+  const { incrementItemCount } = useItemCountContext();
 
   return (
-    <button onClick={onClickFun} className={classes.addButton}>
+    <button onClick={incrementItemCount} className={classes.addButton}>
       + Add
     </button>
   );
 };
 
 export default AddItem;
-
-AddItem.propTypes = {
-  incrementItemCount: PropTypes.func.isRequired,
-};

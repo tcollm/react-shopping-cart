@@ -5,20 +5,11 @@ import PropTypes from "prop-types";
 
 const ItemsList = ({ items }) => {
   // eslint-disable-next-line use-encapsulation/prefer-custom-hooks
-  const [itemCount, setItemCount] = useState(1);
-  // eslint-disable-next-line use-encapsulation/prefer-custom-hooks
   const [expandedItem, setExpandedItem] = useState(null);
-
-  const incrementItemCount = () => {
-    console.log("Button clicked: ", itemCount);
-    setItemCount(itemCount + 1);
-  };
 
   const toggleDescription = (id) => {
     setExpandedItem(expandedItem === id ? null : id);
   };
-
-  // TODO: truncate desc but allow expanding of it
 
   return (
     <ul className={classes.ul}>
@@ -39,7 +30,7 @@ const ItemsList = ({ items }) => {
           </p>
           <div className={classes.wrapper}>
             <p>${item.price.toFixed(2)}</p>
-            <AddItem incrementItemCount={incrementItemCount} />
+            <AddItem />
           </div>
         </li>
       ))}
