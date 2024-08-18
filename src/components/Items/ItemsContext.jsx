@@ -1,7 +1,8 @@
 import { createContext, useContext } from "react";
 import PropTypes from "prop-types";
 
-const ItemsContext = createContext();
+// provide default values
+const ItemsContext = createContext({ items: [], error: null });
 
 export const ItemsProvider = ({ children, value }) => {
   return (
