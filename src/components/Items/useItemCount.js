@@ -5,7 +5,6 @@ const useItemCount = () => {
 
   const incrementItemCount = () => {
     setItemCount(itemCount + 1);
-    console.log(itemCount);
   };
 
   return { itemCount, incrementItemCount };

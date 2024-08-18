@@ -5,10 +5,10 @@ import useItemCount from "./useItemCount";
 const ItemCountContext = createContext();
 
 export const ItemCountProvider = ({ children }) => {
-  const itemCountState = useItemCount();
+  const { itemCount, incrementItemCount } = useItemCount();
 
   return (
-    <ItemCountContext.Provider value={{ itemCountState }}>
+    <ItemCountContext.Provider value={{ itemCount, incrementItemCount }}>
       {children}
     </ItemCountContext.Provider>
   );
