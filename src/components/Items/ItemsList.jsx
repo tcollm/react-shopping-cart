@@ -3,16 +3,6 @@ import AddItem from "../AddItem/AddItem";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-// item object:
-// {
-//   id:1,
-//   title:'...',
-//   price:'...',
-//   category:'...',
-//   description:'...',
-//   image:'...'
-// },
-
 const ItemsList = ({ items }) => {
   // eslint-disable-next-line use-encapsulation/prefer-custom-hooks
   const [expandedItem, setExpandedItem] = useState(null);
@@ -40,8 +30,7 @@ const ItemsList = ({ items }) => {
           </p>
           <div className={classes.wrapper}>
             <p>${item.price.toFixed(2)}</p>
-            {/* <AddItem item={item} /> */}
-            <AddItem />
+            <AddItem itemId={item.id} />
           </div>
         </li>
       ))}
