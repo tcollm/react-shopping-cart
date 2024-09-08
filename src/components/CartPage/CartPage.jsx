@@ -8,9 +8,24 @@ const CartPage = () => {
     <section className={classes.body}>
       <h1>Cart</h1>
       {cart.length > 0 ? (
-        cart.map((item, index) => <p key={index}>{item.title}</p>)
+        <div className={classes.cartItems}>
+          {cart.map((item, index) => (
+            <div key={index} className={classes.cartItem}>
+              <img
+                src={item.image}
+                alt={item.title}
+                className={classes.itemImage}
+              />
+              <div className={classes.itemDetails}>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+                <p className={classes.price}>${item.price.toFixed(2)}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       ) : (
-        <p>Your cart is empty!</p>
+        <p className={classes.emptyMessage}>Your cart is empty!</p>
       )}
     </section>
   );
