@@ -1,5 +1,6 @@
 import classes from "./CartPage.module.css";
 import { useItemCountContext } from "../Items/ItemCountContext";
+import RemoveItem from "../RemoveItem/RemoveItem";
 
 const CartPage = () => {
   const { cart } = useItemCountContext();
@@ -20,6 +21,7 @@ const CartPage = () => {
                 <h2>{item.title}</h2>
                 <p>{item.description}</p>
                 <p className={classes.price}>${item.price.toFixed(2)}</p>
+                <RemoveItem pos={index} />
               </div>
             </div>
           ))}

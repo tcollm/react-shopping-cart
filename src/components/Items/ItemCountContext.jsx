@@ -6,10 +6,13 @@ import useItemCount from "./useItemCount";
 const ItemCountContext = createContext();
 
 export const ItemCountProvider = ({ children }) => {
-  const { itemCount, incrementItemCount, cart } = useItemCount();
+  const { itemCount, incrementItemCount, cart, decrementItemCount } =
+    useItemCount();
 
   return (
-    <ItemCountContext.Provider value={{ itemCount, incrementItemCount, cart }}>
+    <ItemCountContext.Provider
+      value={{ itemCount, incrementItemCount, cart, decrementItemCount }}
+    >
       {children}
     </ItemCountContext.Provider>
   );
