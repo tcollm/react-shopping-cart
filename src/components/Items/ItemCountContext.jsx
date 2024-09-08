@@ -1,8 +1,7 @@
 import { createContext, useContext } from "react";
 import PropTypes from "prop-types";
-import { useItemCount } from "./useItemCount";
-// for some reason vite is not recognizing the import
-// from useItemCount
+import useItemCount from "./useItemCount";
+// NOTE: default exports CANNOT have {}
 
 const ItemCountContext = createContext();
 
