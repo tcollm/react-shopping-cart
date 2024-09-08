@@ -1,12 +1,17 @@
 import classes from "./CartPage.module.css";
+import { useItemCountContext } from "../Items/ItemCountContext";
 
 const CartPage = () => {
-  // TODO: manage cart state (else where), and use it to display cart items here
-  // ex: create array of ids, and then use pre-loaded items list to display each item here
+  const { cart } = useItemCountContext();
+
   return (
     <section className={classes.body}>
       <h1>Cart</h1>
-      <section className={classes.section}>Cart contents</section>
+      {cart.length > 0 ? (
+        cart.map((item, index) => <p key={index}>{item.title}</p>)
+      ) : (
+        <p>Your cart is empty!</p>
+      )}
     </section>
   );
 };

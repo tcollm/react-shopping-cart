@@ -2,11 +2,11 @@ import classes from "./AddItem.module.css";
 import PropTypes from "prop-types";
 import { useItemCountContext } from "../Items/ItemCountContext";
 
-const AddItem = ({ itemId }) => {
+const AddItem = ({ item }) => {
   const { incrementItemCount } = useItemCountContext();
 
   const handleClick = () => {
-    incrementItemCount(itemId);
+    incrementItemCount(item);
   };
 
   return (
@@ -17,6 +17,14 @@ const AddItem = ({ itemId }) => {
 };
 
 AddItem.propTypes = {
-  itemId: PropTypes.number.isRequired,
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    category: PropTypes.string,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
 };
+
 export default AddItem;

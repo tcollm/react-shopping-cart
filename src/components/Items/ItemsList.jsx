@@ -30,7 +30,7 @@ const ItemsList = ({ items }) => {
           </p>
           <div className={classes.wrapper}>
             <p>${item.price.toFixed(2)}</p>
-            <AddItem itemId={item.id} />
+            <AddItem item={item} />
           </div>
         </li>
       ))}
