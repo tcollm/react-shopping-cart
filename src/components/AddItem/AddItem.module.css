@@ -12,12 +12,8 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.addButton:hover {
+.addButton:hover,
+.addButton:active {
   background-color: #333;
   transform: scale(1.05);
-}
-
-.addButton:active {
-  background-color: #222;
-  transform: scale(1.02);
 }
